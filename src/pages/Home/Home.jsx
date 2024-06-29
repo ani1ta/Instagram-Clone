@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import LargeNav from '../../components/Header/LargeNav/LargeNav'
 import MobileNav from '../../components/Header/MobileNav/MobileNav'
 import Feed from './Feed/Feed'
+import Main from '../Profile/Main'
 
 const Home = () => {
   return (
@@ -20,7 +21,13 @@ const Home = () => {
             <Route path="/" element={<Feed />} />
             {/* Add other routes here */}
           </Routes>
-        
+
+          <div className="flex-1 h-full">
+          <Routes>
+            <Route path="/profile" element={<Main />} />
+            {/* Add other routes here */}
+          </Routes>
+         </div>
       </div>
 
       {/* bottom navbar for small screens */}
