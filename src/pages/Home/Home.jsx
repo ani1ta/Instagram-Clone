@@ -15,12 +15,12 @@ const Home = () => {
         </div>
 
         {/* main content section */}
-        <div className="flex-1 h-auto pt-10 px-3">
+        
           <Routes>
             <Route path="/" element={<Feed />} />
             {/* Add other routes here */}
           </Routes>
-        </div>
+        
       </div>
 
       {/* bottom navbar for small screens */}
