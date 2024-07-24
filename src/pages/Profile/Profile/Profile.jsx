@@ -8,6 +8,9 @@ import Tab from './Tab/Tab'
 import PostIcon from '../../../components/Icons/Post/post.png'
 import ReelIcon from '../../../components/Icons/Reel/reel.png'
 import TagIcon from '../../../components/Icons/Tag/tag.png'
+import Posts from '../../Profile/Profile/Post/Post'
+import Reels from '../../Profile/Profile/Reels/Reels'
+import Tags from './Tags/Tags'
 
 const Profile = () => {
     const [activeTab, setActiveTab] = useState("posts");
@@ -15,6 +18,7 @@ const Profile = () => {
   
     const handleTabClick = (tab) => {
         setContentVisible(false);
+
 
         // delay animation
         setTimeout(() => {
@@ -51,24 +55,25 @@ const Profile = () => {
             </div>
             {/* Post, Follower, following */}
             <div className="flex items-center gap-x-6 mb-4">
-                <h6 className="text-base text-gray-100 font-normal">10 Posts</h6>
+                <h6 className="text-base text-gray-100 font-normal">11 Posts</h6>
                 <Link to='/' className='text-base text-gray-100 font-normal'>
-                    1200 Followers
+                    2200 Followers
                 </Link>
                 <Link to='/' className='text-base text-gray-100 font-normal'>
-                    10 Following
+                    11 Following
                 </Link>
 
             </div>
             {/* fullname */}
             <p className="text-base text-gray-100 font-normal">
                 Mountain Lover
-            </p>
+            </p> 
             <p className="text-base text-gray-100 font-normal">
-                Har Har Mahadev <br />
+                ꧁༒🕉️𝖓𝖆𝖒𝖆𝖍 𝖘𝖍𝖎𝖛𝖆𝖞༒꧂ <br /> 
                 Professional Account <br />
-                Professional Account <br />
-                Professional Account <br />
+                🚀 Web/App Enthusiast 💻<br />
+                📜 Lifelong Learner 📰<br />
+               Front-end Developer 💻 <br />
             </p>
             {/* Link */}
             <p className="text-base text-gray-100 font-normal flex items-center gap-x-2">
@@ -102,26 +107,35 @@ const Profile = () => {
         </div>
         {/* Post, Reels, Tagged Section */}
         <div className="w-full h-auto">
+          {/* Tab section */}
             <div className="w-full h-auto flex items-center justify-center gap-x-6 mb-4 
             border-t border-[#313131]">
                 <Tab label="POSTS" 
                 icon={PostIcon} 
                 isActive={activeTab === "posts"}
-                onClick={() => handleTabClick("posts")}
+                onclick={() => handleTabClick("posts")}
                 />
                 <Tab label="REELS" 
-                icon={PostIcon} 
+                icon={ReelIcon} 
                 isActive={activeTab === "reels"}
-                onClick={() => handleTabClick("reels")}
+                onclick={() => handleTabClick("reels")}
                 />
                 <Tab label="TAGGED" 
-                icon={PostIcon} 
+                icon={TagIcon} 
                 isActive={activeTab === "tagged"}
-                onClick={() => handleTabClick("tagged")}
+                onclick={() => handleTabClick("tagged")}
                 />
             </div>
         </div>
-
+        {/* Tab Content Section */}
+        <div className={`mt-4 transition-opacity duration-300 ease-out ${
+        isContentVisible ? "opacity-100" : "opacity-0"
+        }`}
+        >
+          {activeTab === "posts" && <Posts />}
+          {activeTab === "reels" && <Reels />}
+          {activeTab === "tagged" && <Tags />}
+        </div>
       </div>
     </div>
   )

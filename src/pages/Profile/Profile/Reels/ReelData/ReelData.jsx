@@ -14,6 +14,7 @@ const reelsData = [
     {
       id: 2,
       video: SecondReelVideo,
+      likeCount: "10k",
       commentCount: "3k",
     },
     {
@@ -25,6 +26,7 @@ const reelsData = [
     {
       id: 4,
       video: FourthReelVideo, 
+      likeCount: "10k",
       commentCount: "3k",
     },
     {

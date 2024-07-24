@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import Profile from './Profile/Profile'
+import MobileProfile from './MobileProfile/MobileProfile'
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
             {/* Profile for large screen */}
             <Profile />
             {/* Profile for small screen */}
+            <MobileProfile />
         </div>
     </div>
   )

@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
-const Tab = ({label, icon, isActive, onClick}) => {
+const Tab = ({label, icon, isActive, onclick}) => {
   return (
     <div>
         <button className={`${isActive ? "text-white border-t-2 border-t-white" :
